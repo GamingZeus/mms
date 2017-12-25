@@ -1,4 +1,4 @@
-/* status: PENDING, EXPIRED, LOCKED */
+/* status: PENDING, EXPIRED, LOCKED, DELETED */
 use mms;
 
 CREATE TABLE `challenges` (
@@ -9,6 +9,7 @@ CREATE TABLE `challenges` (
   `platform` VARCHAR(10) NOT NULL,
   `bid_amount` int (10) NOT NULL,
   `game_id` int (10),
+  `visibility` ENUM ('PUBLIC','PRIVATE'),
   `created` datetime NOT NULL,
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
   PRIMARY KEY (`id`),

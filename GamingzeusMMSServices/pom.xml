@@ -9,7 +9,7 @@
 	</parent>
   <groupId>gamingzeus.mms.services</groupId>
   <artifactId>GamingzeusMMSServices</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <packaging>jar</packaging>
 
   <name>GamingzeusMMSServices</name>
@@ -17,8 +17,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <aspectj.version>1.8.5</aspectj.version>
   </properties>
-
   <dependencies>
     <dependency>
     	<groupId>gamingzeus.mms.dataAccessor</groupId>
