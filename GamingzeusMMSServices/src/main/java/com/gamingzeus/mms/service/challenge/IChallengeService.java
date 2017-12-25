@@ -8,4 +8,5 @@ public interface IChallengeService {
 	Challenge addOrUpdateChallenge(Challenge challenge);
 	List<Challenge> getChallengesSent(String userId, int page, int size);
 	List<Challenge> getChallengesReceived(String userId, int page, int size);
+	Challenge getChallengeById(Long challengeId);
 }

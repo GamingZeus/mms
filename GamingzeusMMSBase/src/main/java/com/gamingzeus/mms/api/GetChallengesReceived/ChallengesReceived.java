@@ -1,64 +1,44 @@
-package com.gamingzeus.mms.core.entity;
+package com.gamingzeus.mms.api.GetChallengesReceived;
 
-import java.io.Serializable;
+import io.protostuff.Tag;
+
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Entity
-@Table(name = "challenge", catalog = "")
-public class Challenge implements Serializable {
-	
-	private static final long serialVersionUID = -5509070369276587306L;
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class ChallengesReceived {
 
-	@Column(name = "id")
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long              challengeId;
-	
-	@Column(name="user_id_1")
+	@Tag(200)
+	private String challengeId;
+
+	@Tag(201)
 	private String userId1;
-	
-	@Column(name="user_id_2")
-	private String userId2;
-	
-	@Column(name="status")
-	private String status;
-	
-	@Column(name="bid_amount")
-	private Double bidAmount;
-	
-	@Column(name="platform")
-	private String platform;
-	
-	@Column(name="game_id")
-	private Double gameId;
-	
-	@Column(name="visibility")
-	private String visibility;
-	
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created", nullable = false, updatable = false)
-    private Date created;
-    
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated", nullable = false, updatable = false, insertable = false)
-    private Date updated;
-    
-    public Challenge() {
-		super();
-	}
 
-	public Challenge(Long challengeId, String userId1, String userId2,
-			String status, Double bidAmount, String platform, Double gameId,
-			String visibility, Date created, Date updated) {
+	@Tag(202)
+	private String userId2;
+
+	@Tag(203)
+	private String status;
+
+	@Tag(204)
+	private Double bidAmount;
+
+	@Tag(205)
+	private String platform;
+
+	@Tag(206)
+	private Double gameId;
+
+	@Tag(207)
+	private String visibility;
+
+	@Tag(208)
+	private Date created;
+
+	public ChallengesReceived(String challengeId, String userId1,
+			String userId2, String status, Double bidAmount, String platform,
+			Double gameId, String visibility, Date created) {
 		super();
 		this.challengeId = challengeId;
 		this.userId1 = userId1;
@@ -69,14 +49,26 @@ public class Challenge implements Serializable {
 		this.gameId = gameId;
 		this.visibility = visibility;
 		this.created = created;
-		this.updated = updated;
 	}
 
-	public Long getChallengeId() {
+	public ChallengesReceived() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public String getChallengeId() {
 		return challengeId;
 	}
 
-	public void setChallengeId(Long challengeId) {
+	public void setChallengeId(String challengeId) {
 		this.challengeId = challengeId;
 	}
 
@@ -136,29 +128,12 @@ public class Challenge implements Serializable {
 		this.visibility = visibility;
 	}
 
-	public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-      public Date getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
-
 	@Override
 	public String toString() {
-		return "Challenge [challengeId=" + challengeId + ", userId1=" + userId1
-				+ ", userId2=" + userId2 + ", status=" + status
+		return "ChallegesReceived [challengeId=" + challengeId + ", userId1="
+				+ userId1 + ", userId2=" + userId2 + ", status=" + status
 				+ ", bidAmount=" + bidAmount + ", platform=" + platform
-				+ ", gameId=" + gameId + ", visibility=" + visibility
-				+ ", created=" + created + ", updated=" + updated + "]";
+				+ ", gameId=" + gameId + ", visibility=" + visibility + "]";
 	}
 
 	@Override
@@ -169,12 +144,10 @@ public class Challenge implements Serializable {
 				+ ((bidAmount == null) ? 0 : bidAmount.hashCode());
 		result = prime * result
 				+ ((challengeId == null) ? 0 : challengeId.hashCode());
-		result = prime * result + ((created == null) ? 0 : created.hashCode());
 		result = prime * result + ((gameId == null) ? 0 : gameId.hashCode());
 		result = prime * result
 				+ ((platform == null) ? 0 : platform.hashCode());
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
-		result = prime * result + ((updated == null) ? 0 : updated.hashCode());
 		result = prime * result + ((userId1 == null) ? 0 : userId1.hashCode());
 		result = prime * result + ((userId2 == null) ? 0 : userId2.hashCode());
 		result = prime * result
@@ -190,7 +163,7 @@ public class Challenge implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Challenge other = (Challenge) obj;
+		ChallengesReceived other = (ChallengesReceived) obj;
 		if (bidAmount == null) {
 			if (other.bidAmount != null)
 				return false;
@@ -200,11 +173,6 @@ public class Challenge implements Serializable {
 			if (other.challengeId != null)
 				return false;
 		} else if (!challengeId.equals(other.challengeId))
-			return false;
-		if (created == null) {
-			if (other.created != null)
-				return false;
-		} else if (!created.equals(other.created))
 			return false;
 		if (gameId == null) {
 			if (other.gameId != null)
@@ -220,11 +188,6 @@ public class Challenge implements Serializable {
 			if (other.status != null)
 				return false;
 		} else if (!status.equals(other.status))
-			return false;
-		if (updated == null) {
-			if (other.updated != null)
-				return false;
-		} else if (!updated.equals(other.updated))
 			return false;
 		if (userId1 == null) {
 			if (other.userId1 != null)

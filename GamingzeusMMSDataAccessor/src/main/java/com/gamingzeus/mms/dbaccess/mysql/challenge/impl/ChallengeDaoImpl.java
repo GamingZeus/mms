@@ -43,4 +43,12 @@ public class ChallengeDaoImpl implements IChallengeDao {
 		return query.list();
 	}
 
+	@Override
+	public Challenge getChallengeById(Long challengeId) {
+		Query query = sessionFactory.getCurrentSession().createQuery(
+				"from Challenge where challengeId=:challengeId");
+		query.setParameter("challengeId", challengeId);
+		return (Challenge)query.uniqueResult();
+	}
+
 }

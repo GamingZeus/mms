@@ -1,1 +1,8 @@
-gamingzeus/pms/base/GamingzeusPMSBase/App.class
+com/gamingzeus/mms/api/GetChallengesReceived/GetChallengesReceivedResponse.class
+com/gamingzeus/mms/api/GetChallengesSent/GetChallengesSentRequest.class
+com/gamingzeus/mms/api/addOrUpdateChallenge/AddOrUpdateChallengeRequest.class
+com/gamingzeus/mms/api/GetChallengesReceived/ChallengesReceived.class
+com/gamingzeus/mms/api/GetChallengesReceived/GetChallengesReceivedRequest.class
+com/gamingzeus/mms/api/addOrUpdateChallenge/AddOrUpdateChallengeResponse.class
+com/gamingzeus/mms/api/GetChallengesSent/ChallengesSent.class
+com/gamingzeus/mms/api/GetChallengesSent/GetChallengesSentResponse.class

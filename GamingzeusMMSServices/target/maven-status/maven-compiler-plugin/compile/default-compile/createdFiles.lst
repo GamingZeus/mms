@@ -1,3 +1,4 @@
 com/gamingzeus/mms/service/consolidator/IMMSConsolidatorService.class
 com/gamingzeus/mms/service/challenge/impl/ChallengeServiceImpl.class
+com/gamingzeus/mms/service/consolidator/impl/MMSConsolidatorServiceImpl.class
 com/gamingzeus/mms/service/challenge/IChallengeService.class
