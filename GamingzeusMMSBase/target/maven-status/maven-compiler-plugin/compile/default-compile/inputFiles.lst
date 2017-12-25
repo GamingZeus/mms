@@ -1,8 +1,14 @@
 /home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/addOrUpdateChallenge/AddOrUpdateChallengeRequest.java
+/home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/getChallenge/GetChallengeRequest.java
+/home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/getMatch/GetMatchResponse.java
+/home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/GetChallengesReceived/GetChallengesReceivedRequest.java
+/home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/GetChallengesSent/GetChallengesSentRequest.java
+/home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/GetChallengesReceived/GetChallengesReceivedResponse.java
+/home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/getMatch/GetMatchRequest.java
 /home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/GetChallengesSent/GetChallengesSentResponse.java
 /home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/addOrUpdateChallenge/AddOrUpdateChallengeResponse.java
 /home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/GetChallengesSent/ChallengesSent.java
-/home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/GetChallengesReceived/GetChallengesReceivedRequest.java
-/home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/GetChallengesSent/GetChallengesSentRequest.java
+/home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/addOrUpdateMatch/AddOrUpdateMatchResponse.java
+/home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/addOrUpdateMatch/AddOrUpdateMatchRequest.java
 /home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/GetChallengesReceived/ChallengesReceived.java
-/home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/GetChallengesReceived/GetChallengesReceivedResponse.java
+/home/abhirup/abhirup/gamingzeus/mms/GamingzeusMMSBase/src/main/java/com/gamingzeus/mms/api/getChallenge/GetChallengeResponse.java

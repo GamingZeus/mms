@@ -17,15 +17,26 @@ import com.gamingzeus.mms.api.GetChallengesSent.GetChallengesSentRequest;
 import com.gamingzeus.mms.api.GetChallengesSent.GetChallengesSentResponse;
 import com.gamingzeus.mms.api.addOrUpdateChallenge.AddOrUpdateChallengeRequest;
 import com.gamingzeus.mms.api.addOrUpdateChallenge.AddOrUpdateChallengeResponse;
+import com.gamingzeus.mms.api.addOrUpdateMatch.AddOrUpdateMatchRequest;
+import com.gamingzeus.mms.api.addOrUpdateMatch.AddOrUpdateMatchResponse;
+import com.gamingzeus.mms.api.getChallenge.GetChallengeRequest;
+import com.gamingzeus.mms.api.getChallenge.GetChallengeResponse;
+import com.gamingzeus.mms.api.getMatch.GetMatchRequest;
+import com.gamingzeus.mms.api.getMatch.GetMatchResponse;
 import com.gamingzeus.mms.core.entity.Challenge;
+import com.gamingzeus.mms.core.entity.Match;
 import com.gamingzeus.mms.service.challenge.IChallengeService;
 import com.gamingzeus.mms.service.consolidator.IMMSConsolidatorService;
+import com.gamingzeus.mms.service.match.IMatchService;
 
 @Service("mmsConsolidatorService")
 public class MMSConsolidatorServiceImpl implements IMMSConsolidatorService {
 
 	@Autowired
 	private IChallengeService challengeService;
+
+	@Autowired
+	private IMatchService matchService;
 
 	@Override
 	public AddOrUpdateChallengeResponse addOrUpdateChallenge(
@@ -35,6 +46,9 @@ public class MMSConsolidatorServiceImpl implements IMMSConsolidatorService {
 		if (!StringUtils.isEmpty(request.getChallengeId())) {
 			challenge = challengeService.getChallengeById(Long.valueOf(request
 					.getChallengeId()));
+		}
+		if (challenge == null) {
+			challenge = new Challenge();
 		}
 		challenge.setBidAmount(request.getBidAmount());
 		if (challenge.getCreated() == null) {
@@ -122,6 +136,89 @@ public class MMSConsolidatorServiceImpl implements IMMSConsolidatorService {
 				challengesReceivedList.add(cs);
 			}
 			response.setChallengeList(challengesReceivedList);
+		}
+		response.setCode("0");
+		return response;
+	}
+
+	@Override
+	public GetChallengeResponse getChallenge(GetChallengeRequest request) {
+		GetChallengeResponse response = new GetChallengeResponse();
+		if (StringUtils.isEmpty(request.getChallengeId())) {
+			response.setCode(FocusWSErrorCode.INVALID_REQUEST.getCode());
+			response.setMessage("Request Validation Failed");
+			return response;
+		}
+		Challenge c = challengeService.getChallengeById(Long.valueOf(request
+				.getChallengeId()));
+		if (c != null) {
+			response.setBidAmount(c.getBidAmount());
+			response.setChallengeId(String.valueOf(c.getChallengeId()));
+			response.setGameId(c.getGameId());
+			response.setPlatform(c.getPlatform());
+			response.setStatus(c.getStatus());
+			response.setUserId1(c.getUserId1());
+			response.setUserId2(c.getUserId2());
+			response.setVisibility(c.getVisibility());
+			response.setCreated(c.getCreated());
+		}
+		response.setCode("0");
+		return response;
+	}
+
+	@Override
+	public AddOrUpdateMatchResponse addOrUpdateMatch(
+			AddOrUpdateMatchRequest request) {
+		AddOrUpdateMatchResponse response = new AddOrUpdateMatchResponse();
+		Match match = new Match();
+		if (!StringUtils.isEmpty(request.getChallengeId())) {
+			match = matchService.getMatchByChallengeId(Long.valueOf(request
+					.getChallengeId()));
+		}
+		match.setChallengeId(Long.valueOf(request.getChallengeId()));
+		match.setC1ReportedScore(request.getC1ReportedScore());
+		match.setC1ReportedTime(request.getC1ReportedTime());
+		match.setC1ReportedWinner(request.getC1ReportedWinner());
+		match.setC2ReportedScore(request.getC2ReportedScore());
+		match.setC2ReportedTime(request.getC2ReportedTime());
+		match.setC2ReportedWinner(request.getC2ReportedWinner());
+		if (match.getCreated() == null) {
+			match.setCreated(DateUtils.getCurrentTime());
+		}
+		match.setUpdated(DateUtils.getCurrentTime());
+		match = matchService.addOrUpdateMatch(match);
+		response.setChallengeId(Long.valueOf(request.getChallengeId()));
+		response.setC1ReportedScore(request.getC1ReportedScore());
+		response.setC1ReportedTime(request.getC1ReportedTime());
+		response.setC1ReportedWinner(request.getC1ReportedWinner());
+		response.setC2ReportedScore(request.getC2ReportedScore());
+		response.setC2ReportedTime(request.getC2ReportedTime());
+		response.setC2ReportedWinner(request.getC2ReportedWinner());
+		response.setCreated(DateUtils.getCurrentTime());
+		return response;
+
+	}
+
+	@Override
+	public GetMatchResponse getMatch(GetMatchRequest request) {
+		GetMatchResponse response = new GetMatchResponse();
+		if (StringUtils.isEmpty(request.getChallengeId())) {
+			response.setCode(FocusWSErrorCode.INVALID_REQUEST.getCode());
+			response.setMessage("Request Validation Failed");
+			return response;
+		}
+		Match m = matchService.getMatchByChallengeId(Long.valueOf(request
+				.getChallengeId()));
+		if (m != null) {
+			response.setChallengeId(Long.valueOf(m.getChallengeId()));
+			response.setC1ReportedScore(m.getC1ReportedScore());
+			response.setC1ReportedTime(m.getC1ReportedTime());
+			response.setC1ReportedWinner(m.getC1ReportedWinner());
+			response.setC2ReportedScore(m.getC2ReportedScore());
+			response.setC2ReportedTime(m.getC2ReportedTime());
+			response.setC2ReportedWinner(m.getC2ReportedWinner());
+			response.setCreated(DateUtils.getCurrentTime());
+			response.setCreated(m.getCreated());
 		}
 		response.setCode("0");
 		return response;

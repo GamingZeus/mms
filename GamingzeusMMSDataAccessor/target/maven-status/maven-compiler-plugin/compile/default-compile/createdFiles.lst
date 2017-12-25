@@ -1,2 +1,4 @@
+com/gamingzeus/mms/dbaccess/mysql/match/IMatchDao.class
 com/gamingzeus/mms/dbaccess/mysql/challenge/IChallengeDao.class
+com/gamingzeus/mms/dbaccess/mysql/match/impl/MatchDaoImpl.class
 com/gamingzeus/mms/dbaccess/mysql/challenge/impl/ChallengeDaoImpl.class

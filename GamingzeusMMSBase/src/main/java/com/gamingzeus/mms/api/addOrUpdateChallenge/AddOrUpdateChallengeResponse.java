@@ -39,6 +39,11 @@ public class AddOrUpdateChallengeResponse extends ServiceResponse {
 	@Tag(108)
 	private Date created;
 
+	public AddOrUpdateChallengeResponse() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public AddOrUpdateChallengeResponse(String challengeId, String userId1,
 			String userId2, String status, Double bidAmount, String platform,
 			Double gameId, String visibility, Date created) {
@@ -52,16 +57,6 @@ public class AddOrUpdateChallengeResponse extends ServiceResponse {
 		this.gameId = gameId;
 		this.visibility = visibility;
 		this.created = created;
-	}
-
-	public AddOrUpdateChallengeResponse() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public AddOrUpdateChallengeResponse(String code, String message) {
-		super(code, message);
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getChallengeId() {
@@ -127,7 +122,7 @@ public class AddOrUpdateChallengeResponse extends ServiceResponse {
 	public void setVisibility(String visibility) {
 		this.visibility = visibility;
 	}
-	
+
 	public Date getCreated() {
 		return created;
 	}

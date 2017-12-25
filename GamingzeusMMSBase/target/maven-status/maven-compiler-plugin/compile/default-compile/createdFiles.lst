@@ -1,7 +1,13 @@
 com/gamingzeus/mms/api/GetChallengesReceived/GetChallengesReceivedResponse.class
-com/gamingzeus/mms/api/GetChallengesSent/GetChallengesSentRequest.class
+com/gamingzeus/mms/api/getChallenge/GetChallengeResponse.class
 com/gamingzeus/mms/api/addOrUpdateChallenge/AddOrUpdateChallengeRequest.class
+com/gamingzeus/mms/api/addOrUpdateMatch/AddOrUpdateMatchRequest.class
 com/gamingzeus/mms/api/GetChallengesReceived/ChallengesReceived.class
+com/gamingzeus/mms/api/getMatch/GetMatchRequest.class
+com/gamingzeus/mms/api/addOrUpdateMatch/AddOrUpdateMatchResponse.class
+com/gamingzeus/mms/api/getChallenge/GetChallengeRequest.class
+com/gamingzeus/mms/api/getMatch/GetMatchResponse.class
+com/gamingzeus/mms/api/GetChallengesSent/GetChallengesSentRequest.class
 com/gamingzeus/mms/api/GetChallengesReceived/GetChallengesReceivedRequest.class
 com/gamingzeus/mms/api/addOrUpdateChallenge/AddOrUpdateChallengeResponse.class
 com/gamingzeus/mms/api/GetChallengesSent/ChallengesSent.class

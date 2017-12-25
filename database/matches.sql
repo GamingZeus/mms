@@ -2,8 +2,7 @@
 
 use mms:
 
-CREATE TABLE `matches` (
-  `id` int(11) NOT NULL,
+CREATE TABLE `match` (
   `challenge_id` int(11) NOT NULL,
   `c1_reported_score` VARCHAR(20),
   `c2_reported_score` VARCHAR(20),
@@ -14,7 +13,6 @@ CREATE TABLE `matches` (
   `status` VARCHAR(10) NOT NULL,
   `created` datetime NOT NULL,
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
-  PRIMARY KEY (`id`),
-  KEY `idx_games` (``)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
